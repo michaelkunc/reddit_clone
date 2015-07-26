@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150726002606) do
     t.string   "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "user_id"
+    t.integer  "user_id"
     t.string   "integer"
   end
 
