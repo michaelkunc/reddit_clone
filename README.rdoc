@@ -11,4 +11,5 @@ Stuff I'd like to add
 
 Bug Fixes
 -fix links (currently going to local host)
+-click through and see what other bugs there are
 
