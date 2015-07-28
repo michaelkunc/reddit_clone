@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728015014) do
+ActiveRecord::Schema.define(version: 20150728125150) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "link_id"
@@ -48,10 +48,9 @@ ActiveRecord::Schema.define(version: 20150728015014) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
-    t.string   "integer"
   end
 
-  add_index "links", ["integer"], name: "index_links_on_integer"
+  add_index "links", ["user_id"], name: "index_links_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -66,6 +65,7 @@ ActiveRecord::Schema.define(version: 20150728015014) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
