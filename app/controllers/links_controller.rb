@@ -7,6 +7,11 @@ class LinksController < ApplicationController
   respond_to :html
   respond_to :js
 
+
+  def index
+    respond_with :all_links
+  end
+
   def show
   end
 
