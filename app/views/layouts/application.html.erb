@@ -2,8 +2,8 @@
 <html>
 <head>
   <title>Raddit</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -15,7 +15,7 @@
 
           <% if user_signed_in? %>
             <ul class="nav navbar-nav navbar-right">
-              <li><%= link_to 'Submit Link', new_link_path %></li>
+              <li><%= link_to 'Submit Link', new_link_path, id: "new-link", remote: true %></li>
               <li><%= link_to 'Account Settings', edit_user_registration_path %></li>
               <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete  %> </li>
             </ul>
@@ -33,13 +33,13 @@
 
 
 <div id="main_content" class="container">
-  <% flash.each do |name, msg| %>
-    <%= content_tag(:div, msg, class: "alert-alert-#{name}") %>
-  <% end %>
+    <% flash.each do |name, msg| %>
+      <%= content_tag(:div, msg, class: "alert-alert-#{name}") %>
+    <% end %>
 
-  <div id="content" class="col-md-9 center-block">
-    <%= yield %>
-  </div>
+    <div id="content" class="col-md-9 center-block">
+      <%= yield %>
+    </div>
 
 </div>
 
